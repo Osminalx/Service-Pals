@@ -1,0 +1,15 @@
+.content{
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contentImage{
+    width: 200px;
+}

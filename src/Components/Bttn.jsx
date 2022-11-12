@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 
-const Button=({color, text, onClick,})=>{
+const Bttn=({color, text, onClick,})=>{
 
     return(
         <button onClick={onClick} syle ={{backgroundColor: color}} className='btn'>{text}</button>
@@ -12,10 +12,10 @@ const Button=({color, text, onClick,})=>{
     
 // }
 
-Button.propTypes={
+Bttn.propTypes={
     text:PropTypes.string,
     color:PropTypes.string,
     onClick:PropTypes.func.isRequired,
 
 }
-export default Button
+export default Bttn

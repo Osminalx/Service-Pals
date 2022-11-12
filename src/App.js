@@ -1,10 +1,10 @@
 import './Styles/App.css';
-import Event from './Components/Event';
 import Header from './Components/Header/Header';
-import Events from './Components/Events';
+import Events from './Components/Events/Events';
 import AddEvent from './Components/AddEvent';
 import Footer from './Components/Footer';
 import { useState } from 'react';
+
 
 function App() {
   const [showAddEvent, setShowAddEvent] = useState(false);

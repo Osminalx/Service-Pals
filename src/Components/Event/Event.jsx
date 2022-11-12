@@ -1,6 +1,6 @@
-import Button from './Button'
+import Button from '../Bttn'
 import {useState} from 'react';
-
+import "../Event/Event.css"
 
 const Event = ({event,onDelete}) => {
   const[count,setCount] = useState(1);
@@ -8,7 +8,7 @@ const Event = ({event,onDelete}) => {
   return (
     <>
         <div className="content">
-            <img src="https://img.freepik.com/fotos-premium/entorno-playa-sucia-basura-plastica_127090-1071.jpg" alt="Imagen" />
+            <img src="https://img.freepik.com/fotos-premium/entorno-playa-sucia-basura-plastica_127090-1071.jpg" alt="Imagen" className='contentImage'/>
             <h2>{event.Titulo}</h2>
             <h6>Organizador: {event.Organizador}</h6>
             <h6>{event.Fecha}</h6>
