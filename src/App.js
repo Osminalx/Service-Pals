@@ -1,7 +1,12 @@
 import './Styles/App.css';
+<<<<<<< HEAD
+import Event from './Components/Event';
+import Header from './Components/Header/Header';
+=======
 import Events from './Components/Events';
 import AddEvent from './Components/AddEvent';
 import { useState } from 'react';
+>>>>>>> 78251b3f2e061c55464d59be12f165f5ef2d1d39
 
 function App() {
   const [showAddEvents, setShowAddEvents] = useState(false);
@@ -47,6 +52,10 @@ function App() {
 
   return (
     <div className='App'>
+<<<<<<< HEAD
+      <Header/>
+      <Event />
+=======
       <Events
         events={events}
         onAdd={() => setShowAddEvents(!showAddEvents)}
@@ -58,6 +67,7 @@ function App() {
       ) : (
         'No hay eventos de momento'
       )}
+>>>>>>> 78251b3f2e061c55464d59be12f165f5ef2d1d39
     </div>
   );
 }

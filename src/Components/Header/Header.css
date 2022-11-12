@@ -1,0 +1,18 @@
+Header{
+    height: 20%;
+    background-color: #beffbc;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    
+}
+
+.brandName{
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.logoImage{
+    height: 40px;
+}
