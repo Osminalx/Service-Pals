@@ -1,9 +1,11 @@
+import Event from './Event'
 
-const Events = ({Event,}) => {
+const Events = ({events,onDelete,onAdd}) => {
   return (
     <>
-    {Events.map((event)=>{
-        <Event />
+    {events.map((event)=>{
+
+       return  <Event key= {event.id} event={event}/>
     })}
     </>
   )
