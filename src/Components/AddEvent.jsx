@@ -33,6 +33,10 @@ const AddEvent = ({onAdd}) => {
             <input type="date" value={Fecha} onChange={(e)=>setFecha(e.target.value)} />
         </div>
         <div>
+            <label>Hora del evento</label>
+            <input type="time" name="Hora" />
+        </div>
+        <div>
             <label>Descripción</label>
             <input type="text" placeholder="Descripción" value={Descripcion} onChange={(e)=>setDescripcion(e.target.value)} />
         </div>
