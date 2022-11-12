@@ -2,12 +2,12 @@ import './Styles/App.css';
 import Header from './Components/Header/Header';
 import Events from './Components/Events/Events';
 import AddEvent from './Components/AddEvent';
+import Footer from './Components/Footer';
 import { useState } from 'react';
-import EventMui from './Components/Event/EventMui';
-import MultiActionAreaCard from './Components/Event/EventMui';
+
 
 function App() {
-  const [showAddEvents, setShowAddEvents] = useState(false);
+  const [showAddEvent, setShowAddEvent] = useState(false);
   const [events, setEvents] = useState([
     {
       id: 1,
@@ -25,7 +25,7 @@ function App() {
       Fecha: '13/11/2022',
       hora: '15:25',
       Descripcion:
-        'Hay que pasear a los perritos por la ciudad para qur tengacn un día libre ',
+        'Hay que pasear a los perritos por la ciudad para que tengacn un día libre ',
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ function App() {
   ]);
 
   const addEvent = (event) => {
-    const id = id + 1;
+    const id = +1;
     const newEvent = { id, ...event };
     setEvents([...events, newEvent]);
   };
@@ -50,19 +50,17 @@ function App() {
 
   return (
     <div className='App'>
-      <Header/>
-      
-      <Events
-        events={events}
-        onAdd={() => setShowAddEvents(!showAddEvents)}
-        showAdd={showAddEvents}
-      />
-      {showAddEvents && <addEvent onAdd={addEvent} />}
+      <Header />
+      {showAddEvent && <AddEvent onAdd={addEvent} />}
       {events.length > 0 ? (
-        <Events events={events} onDelete={deleteEvent} />
+        <Events events={events} onAdd={addEvent} onDelete={deleteEvent} />
       ) : (
-        'No hay eventos de momento'
+        'No hay eventos disponibles'
       )}
+      <Footer
+        onAdd={() => setShowAddEvent(!showAddEvent)}
+        showAddEvent={showAddEvent}
+      />
     </div>
   );
 }
