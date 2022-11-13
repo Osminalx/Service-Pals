@@ -5,7 +5,6 @@ import AddEvent from './Components/AddEvent';
 import Footer from './Components/Footer';
 import { useState } from 'react';
 
-
 function App() {
   const [showAddEvent, setShowAddEvent] = useState(false);
   const [events, setEvents] = useState([
@@ -38,7 +37,7 @@ function App() {
     },
   ]);
 
-  const addEvent = (event) => {
+  const addEvent2 = (event) => {
     const id = +1;
     const newEvent = { id, ...event };
     setEvents([...events, newEvent]);
@@ -48,12 +47,20 @@ function App() {
     setEvents(events.filter((event) => event.id !== id));
   };
 
+  const onClose = () => setShowAddEvent(false);
+
   return (
     <div className='App'>
       <Header />
-      {showAddEvent && <AddEvent onAdd={addEvent} />}
+
+      <AddEvent
+        handleClose={onClose}
+        openval={showAddEvent}
+        onAdd={addEvent2}
+      />
+
       {events.length > 0 ? (
-        <Events events={events} onAdd={addEvent} onDelete={deleteEvent} />
+        <Events events={events} onAdd={addEvent2} />
       ) : (
         'No hay eventos disponibles'
       )}

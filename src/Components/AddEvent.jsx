@@ -1,8 +1,10 @@
-
 import { useState } from "react"
+import Modal from '@mui/material/Modal';
+// import Box from '@mui/material/Box';
 
 
-const AddEvent = ({onAdd}) => {
+
+const AddEvent = ({onAdd,handleClose, openval}) => {
   const [Titulo, setTitulo] = useState('')
   const [Organizador, setOrganizador] = useState('')
   const [Fecha, setFecha] = useState(Date())
@@ -18,7 +20,7 @@ const AddEvent = ({onAdd}) => {
     }
     alert('Una vez creado el evento, no se podrá borrar')
     onAdd({Titulo,Organizador,Fecha,Hora,Descripcion})
-    
+
     setTitulo('')
     setOrganizador('')
     setFecha('')
@@ -26,8 +28,11 @@ const AddEvent = ({onAdd}) => {
     setDescripcion('')
 }
 
-
     return (
+     <Modal
+    open= {openval}
+    onClose={handleClose}
+    >
     <form onSubmit= {onSubmit}>
         <div>
             <label>Evento</label>
@@ -50,7 +55,8 @@ const AddEvent = ({onAdd}) => {
             <input type="text" placeholder="Descripción" value={Descripcion} onChange={(e)=>setDescripcion(e.target.value)} />
         </div>
         <input type='submit' value='Save Event' />
-    </form>
+     </form>
+     </ Modal>
   )
 }
 

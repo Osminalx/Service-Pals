@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import Bttn from '../Bttn';
 
-export default function MultiActionAreaCard() {
+export default function MultiActionAreaCard({event}) {
   const[count,setCount] = useState(1);
   return (
     <Card sx={{ maxWidth: 300, maxHeight: 450 }}>
@@ -20,15 +20,13 @@ export default function MultiActionAreaCard() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Ayuda Comunitaria
+            {event.Titulo}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {event.Fecha},{event.Hora},{event.Organizador}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {event.Descripcion}
           </Typography>
         </CardContent>
       </CardActionArea>
